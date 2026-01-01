@@ -7,8 +7,6 @@ function ProductList() {
   const [products, setProducts] = useState([]);
   const { addToCart } = useCart();
 
-
-  // Fetch products when component loads
   useEffect(() => {
     const fetchProducts = async () => {
       try {
