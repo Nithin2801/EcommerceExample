@@ -23,18 +23,17 @@ function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        // store JWT token
         localStorage.setItem("token", data.token);
         setMessage("Login successful! Redirecting...");
         setTimeout(() => {
-          window.location.href = "/admin"; // redirect to Admin Panel
+          window.location.href = "/admin";
         }, 1200);
       } else {
-        setMessage("❌ " + data.message);
+        setMessage("X" + data.message);
       }
     } catch (error) {
       console.error(error);
-      setMessage("⚠️ Something went wrong!");
+      setMessage("Something went wrong!");
     }
   };
 
